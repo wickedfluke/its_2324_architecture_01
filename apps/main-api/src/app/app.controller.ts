@@ -6,7 +6,8 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getData() {
-    return this.appService.getData();
+  async getData() {
+    const stock = await this.appService.getData();
+    return {qty: stock};
   }
 }
