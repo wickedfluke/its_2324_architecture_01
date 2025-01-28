@@ -8,6 +8,6 @@ export class AppController {
   @Get()
   async getData() {
     const stock = await this.appService.getData();
-    return {qty: stock};
+    return {qty: stock.quantity};
   }
 }

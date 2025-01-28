@@ -1,14 +1,18 @@
 import { Controller } from '@nestjs/common';
 import { AppService } from './app.service';
-import { MessagePattern } from '@nestjs/microservices';
+import { GetStockQuantityInput, GetStockQuantityResult, WarehouseMessage, WarehouseMessageDefinitions } from '@warehouse/config';
 
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @MessagePattern({ cmd: 'getStock' })
-  async getData() {
-    console.log('message received');
-    return this.appService.getStockById('asd');
+  @WarehouseMessage(WarehouseMessageDefinitions.StockQuantityMessage)
+  async getData(payload: GetStockQuantityInput): Promise<GetStockQuantityResult> {
+    const { productId } = payload;
+    const quantity = await this.appService.getStockById('asd');
+    return {
+      productId,
+      quantity
+    };
   }
 }

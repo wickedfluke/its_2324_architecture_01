@@ -17,7 +17,10 @@
     "paths": {
       "@utils/event-utils": ["libs/utils/event-utils/src/index.ts"],
       "@utils/message-utils": ["libs/utils/message-utils/src/index.ts"],
-      "@warehouse/config": ["libs/warehouse/config/src/index.ts"]
+      "@warehouse/config": ["libs/warehouse/config/src/index.ts"],
+      "@warehouse/message-client": [
+        "libs/warehouse/message-client/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

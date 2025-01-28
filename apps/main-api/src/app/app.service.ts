@@ -1,14 +1,14 @@
-import { Inject, Injectable } from '@nestjs/common';
-import { ClientProxy } from '@nestjs/microservices';
-import { lastValueFrom } from 'rxjs';
+import { Injectable } from '@nestjs/common';
+import { WarehouseMessageClientService } from '@warehouse/message-client';
+
 
 @Injectable()
 export class AppService {
-  constructor(@Inject('WAREHOUSE_CLIENT') private client: ClientProxy) {}
+  constructor(protected warehouseClient: WarehouseMessageClientService) {}
 
   async getData() {
     console.log('sending request to warehouse');
-    const result =  await lastValueFrom(this.client.send<number>({cmd: 'getStock'}, {}));
+    const result =  await this.warehouseClient.getStockQuantity({productId: 'id1'});
     console.log('received response from warehouse', result);
     return result;
   }
