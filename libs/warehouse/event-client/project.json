@@ -1,0 +1,9 @@
+{
+  "name": "warehouse-event-client",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/warehouse/event-client/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project warehouse-event-client --web",
+  "targets": {}
+}

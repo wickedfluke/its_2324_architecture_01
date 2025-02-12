@@ -8,10 +8,10 @@ import { WarehouseMessageClientService } from './messa-client.service';
     ClientsModule.register([
       {
         name: 'WAREHOUSE_CLIENT',
-        transport: Transport.TCP,
+        transport: Transport.REDIS,
         options: {
-          host: WAREHOUSE_MESSAGE_HOST,
-          port: WAREHOUSE_MESSAGE_PORT
+          host: 'localhost',
+          port: 6379
         }
       },
     ])
