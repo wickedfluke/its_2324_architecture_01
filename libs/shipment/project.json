@@ -1,0 +1,20 @@
+{
+  "name": "Shipment",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shipment/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shipment",
+        "tsConfig": "libs/shipment/tsconfig.lib.json",
+        "packageJson": "libs/shipment/package.json",
+        "main": "libs/shipment/src/index.ts",
+        "assets": ["libs/shipment/*.md"]
+      }
+    }
+  }
+}

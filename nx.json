@@ -34,7 +34,14 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/main-api-e2e/**/*"]
+      "exclude": ["apps/main-api-e2e/**/*", "apps/shipment-e2e/**/*"]
     }
-  ]
+  ],
+  "targetDefaults": {
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    }
+  }
 }
