@@ -1,4 +1,4 @@
-import { clientEventDecoratorFactory, EventsDefinition } from '@utils/event-utils';
+import { EventsDefinition } from '@utils/event-utils';
 
 export class TestPayload {
   productId!: string;
