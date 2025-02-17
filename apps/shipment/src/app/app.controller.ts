@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller} from '@nestjs/common';
 import { EventPattern, Payload } from "@nestjs/microservices";
 import { ShipmentEventService } from '@2324-architecture-01/Shipment';
 @Controller()
