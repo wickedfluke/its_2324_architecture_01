@@ -5,6 +5,6 @@ import { ShipmentEventHandler } from './shipment-handler';
 
 @Module({
   imports: [ShipmentEventsModule],
-  controllers: [AppController, ShipmentEventHandler], // ✅ Registriamo entrambi
+  controllers: [AppController, ShipmentEventHandler],
 })
 export class AppModule {}

@@ -6,7 +6,6 @@ import { ShipmentEventsDefinitions } from "./shipment-config";
 export class ShipmentEventService {
   constructor(@Inject('SHIPMENT_EVENT_SERVICE') private readonly shipmentClient: ClientProxy) {}
 
-  // Method to send shipment status
   async sendShipmentStatus(orderId: string, status: ShipmentEventsDefinitions["shipmentStatus"]) {
     this.shipmentClient.emit(status, { orderId, status });
   }
