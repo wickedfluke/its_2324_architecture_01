@@ -1,3 +1,3 @@
 export type ShipmentEventsDefinitions = {
-    shipmentStatus: 'shipment_start' | 'shipment_shipped' | 'shipment_delivered';
+    shipmentStatus: 'shipment.start' | 'shipment.shipped' | 'shipment.delivered';
 };

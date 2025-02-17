@@ -8,7 +8,6 @@ export class ShipmentEventService {
 
   // Method to send shipment status
   async sendShipmentStatus(orderId: string, status: ShipmentEventsDefinitions["shipmentStatus"]) {
-    console.log(`🚀 Shipment Event: ${status} for order ${orderId}`);
-    this.shipmentClient.emit(`shipment.${status}`, { orderId, status });
+    this.shipmentClient.emit(status, { orderId, status });
   }
 }
